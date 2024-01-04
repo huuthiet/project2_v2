@@ -114,10 +114,10 @@ const ManagerEnergy = props => {
                     Điện áp: {room.volt} (V)
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Công suất: {room.power} (Wh)
+                    Công suất: {room.power} (W)
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Năng lượng: {room.energy} (KW)
+                    Năng lượng: {room.energy} (KWh)
                   </Typography>
                 </CardContent>
                 <CardActions style={{ justifyContent: 'center' }}>
