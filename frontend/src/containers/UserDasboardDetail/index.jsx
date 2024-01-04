@@ -452,10 +452,10 @@ const formattedMoney = new Intl.NumberFormat('vi-VN', {
 
                 <Grid item container spacing={2}>
                   <Grid item lg={6} md={6} sm={5} xs={5}>
-                    <CardView title="Công suất (Wh)" value={roomData.power} unit="" />
+                    <CardView title="Công suất (W)" value={roomData.power} unit="" />
                   </Grid>
                   <Grid item lg={6} md={6} sm={5} xs={5}>
-                    <CardView title="Năng lượng (KW)" value={roomData.energy} unit="" />
+                    <CardView title="Năng lượng (KWh)" value={roomData.energy} unit="" />
                   </Grid>
                 </Grid>
               </Grid>
@@ -464,6 +464,7 @@ const formattedMoney = new Intl.NumberFormat('vi-VN', {
             <Alert severity="info">
               <AlertTitle>Tiền điện tháng {currentMonth}</AlertTitle>
               Tổng: <strong>{formattedMoney}</strong>
+              <p>Số điện: <strong>energyUsed</strong> KWh</p>
             </Alert>
             </PaperWrapper>
     </div>
