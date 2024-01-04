@@ -43,7 +43,7 @@ const Home = () => {
     '1.4	PHƯƠNG PHÁP NGHIÊN CỨU\n'	+
     '1.5	BỐ CỤC CỦA BÀI BÁO CÁO'},
 
-    { label: 'Chương 2', content: 'CHƯƠNG 2	CƠ SỞ LÝ THUYẾT\n' +
+    { label: 'Chương 2', content: 'CHƯƠNG 2: CƠ SỞ LÝ THUYẾT\n' +
     '2.1	HỆ THỐNG GIÁM SÁT ĐIỆN NĂNG TIÊU THỤ\n' +
     '2.2	VI ĐIỀU KHIỂN CHÍNH – ESP32 NODE MCU\n' +
     '2.3	NGÔN NGỮ THIẾT KẾ WEB\n' +
@@ -53,16 +53,16 @@ const Home = () => {
     '2.7	HỆ ĐIỀU HÀNH THỜI GIAN THỰC\n' +
     '2.8	CÁC LINH KIỆN HỆ THỐNG'},
 
-    { label: 'Chương 3', content: 'CHƯƠNG 3	THIẾT KẾ VÀ THI CÔNG HỆ THỐNG\n' + 
+    { label: 'Chương 3', content: 'CHƯƠNG 3: THIẾT KẾ VÀ THI CÔNG HỆ THỐNG\n' + 
     '3.1	PHÂN TÍCH YÊU CẦU HỆ THỐNG\n' +
     '3.2	SƠ ĐỒ KHỐI CỦA HỆ THỐNG\n' +
     '3.3	THIẾT KẾ PHẦN CỨNG HỆ THỐNG\n' +
     '3.4	THIẾT KẾ PHẦN MỀM HỆ THỐNG' },
 
-    { label: 'Chương 4', content: 'CHƯƠNG 4	KẾT QUẢ THỰC HIỆN\n' +
+    { label: 'Chương 4', content: 'CHƯƠNG 4: KẾT QUẢ THỰC HIỆN\n' +
     '4.1	PHẦN CỨNG HỆ THỐNG\n' +
     '4.2	GIAO DIỆN NGƯỜI DÙNG' },
-    { label: 'Chương 5', content: 'CHƯƠNG 5	KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN\n' +
+    { label: 'Chương 5', content: 'CHƯƠNG 5: KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN\n' +
     '5.1	KẾT LUẬN\n' +
     '5.2	HƯỚNG PHÁT TRIỂN' },
   ];
