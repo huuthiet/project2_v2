@@ -20,7 +20,7 @@ mongoose.connect(uri)
         console.log(error)
     });
 
-    const __dirname = path.resolve();
+    
 
 const app = express();
 app.use(cors());
@@ -28,15 +28,11 @@ app.use(cors());
 app.use(express.json());
 // app.use(cookieParser())
 
+const __dirname = path.resolve();
 app.listen(3000, () => {
     console.log("Server is running on port 3000!");
 });
 
-app.use(express.static(path.join(__dirname, '/frontend/dist')));
-
-// app.get('*', (req, res, next) => {
-//     res.sendFile(path.join(__dirname, 'frontend', 'dist', ))
-// })
 
 
 //get all
@@ -951,6 +947,23 @@ app.get('/rooms_mon_energy_used/:device_id', async (req, res) => {
     }
 });
 
+
+
+app.use(express.static(path.join(__dirname, '/frontend/dist')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
+
+app.use((error, req, res, next) => {
+    const statusCode = error.statusCode || 500;
+    const message = error.message || "Internal Server Error";
+    return res.status(statusCode).json({
+        statusCode,
+        success: false, // Inform that the request was failed
+        message
+    });
+});
 
 
 
