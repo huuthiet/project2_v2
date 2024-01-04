@@ -175,7 +175,7 @@ const Home = () => {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    PZEM 004
+                    PZEM 004T
                   </Typography>
                   <Typography gutterBottom variant="h5" component="div" style={{ fontSize: '15px' }}>
                     Cảm biến đo các thông số
