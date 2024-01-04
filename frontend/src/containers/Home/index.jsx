@@ -117,7 +117,7 @@ const Home = () => {
                   component="img"
                   alt="green iguana"
                   height="140"
-                  image="./../../../public/images/esp.jpg"
+                  image="../../../images/esp.jpg"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -141,7 +141,7 @@ const Home = () => {
                   component="img"
                   alt="green iguana"
                   height="140"
-                  image="../../../public/images/pzem004.jpg"
+                  image="../../../images/pzem004.jpg"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -165,7 +165,7 @@ const Home = () => {
                   component="img"
                   alt="green iguana"
                   height="140"
-                  image="../../../public/images/lcd.jpg"
+                  image="../../../images/lcd.jpg"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -189,7 +189,7 @@ const Home = () => {
                   component="img"
                   alt="green iguana"
                   height="140"
-                  image="../../../public/images/source.png"
+                  image="../../../images/source.png"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">

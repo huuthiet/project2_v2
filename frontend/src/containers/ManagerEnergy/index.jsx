@@ -101,7 +101,7 @@ const ManagerEnergy = props => {
                   component="img"
                   alt="green iguana"
                   height="140"
-                  image="../../../public/images/metter.jpg"
+                  image="../../../images/metter.jpg"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
