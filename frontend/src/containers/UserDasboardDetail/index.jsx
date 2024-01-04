@@ -464,7 +464,7 @@ const formattedMoney = new Intl.NumberFormat('vi-VN', {
             <Alert severity="info">
               <AlertTitle>Tiền điện tháng {currentMonth}</AlertTitle>
               Tổng: <strong>{formattedMoney}</strong>
-              <p>Số điện: <strong>{energyUsed}</strong> KWh</p>
+              <p>Số điện: <strong>{energyUsed.toFixed(2)}</strong> KWh</p>
             </Alert>
             </PaperWrapper>
     </div>
