@@ -105,7 +105,7 @@ export default function Footer() {
             <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>THỰC HIỆN</h6>
               <p>
-                  Giáo viên hướng dẫn: Huỳnh Thị Thu Hiền
+                  Giáo viên hướng dẫn: Th.S Huỳnh Thị Thu Hiền
               </p>
               <p>
                 Sinh viên thực hiện:
