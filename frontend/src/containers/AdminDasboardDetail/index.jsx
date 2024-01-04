@@ -143,32 +143,32 @@ const fetchData = async (idRoom, startDate, endDate, rangeTime) => {
   const deviceId = idRoom
 
   //MẶC ĐỊNH TRONG THÁNG
-  // const apiUrl = `http://localhost:3000/rooms_1hour/${deviceId}}`; 
+  // const apiUrl = `/rooms_1hour/${deviceId}}`; 
 
-  let apiUrl = `http://localhost:3000/rooms_1day_test/${deviceId}/${currentYear}/${currentMonth}`;  
+  let apiUrl = `/rooms_1day_test/${deviceId}/${currentYear}/${currentMonth}`;  
 
   if (rangeTime === 0) {
     //ngày
-   apiUrl = `http://localhost:3000/rooms_1hour_test/${deviceId}`;  
+   apiUrl = `/rooms_1hour_test/${deviceId}`;  
   } else if (rangeTime === 1) {
     //tuần
-   apiUrl = `http://localhost:3000/rooms_1day_week_test/${deviceId}`;  
+   apiUrl = `/rooms_1day_week_test/${deviceId}`;  
   } else if (rangeTime === 2) {
     //tháng
-   apiUrl = `http://localhost:3000/rooms_1day_test/${deviceId}/${currentYear}/${currentMonth}`;  
-  // apiUrl = `http://localhost:3000/rooms_1day_test/${deviceId}/2024/1`;  
+   apiUrl = `/rooms_1day_test/${deviceId}/${currentYear}/${currentMonth}`;  
+  // apiUrl = `/rooms_1day_test/${deviceId}/2024/1`;  
   } else if (rangeTime === 3) {
     //năm
-   apiUrl = `http://localhost:3000/rooms_1mon_year_test/${deviceId}`;  
+   apiUrl = `/rooms_1mon_year_test/${deviceId}`;  
   } else if (rangeTime === 4) {
     //tất cả -> CHƯA LÀM
-    // apiUrl = `http://localhost:3000/rooms_1day/${deviceId}/${currentMonth}`;  
+    // apiUrl = `/rooms_1day/${deviceId}/${currentMonth}`;  
   // } else if (rangeTime === 5) {
   //   //ngày tới ngày
-  //   apiUrl = `http://localhost:3000/rooms_day_to_day/${deviceId}/${startDate}/${endDate}`;  
+  //   apiUrl = `/rooms_day_to_day/${deviceId}/${startDate}/${endDate}`;  
   } else {
     // lấy trong tháng
-    apiUrl = `http://localhost:3000/rooms_1day/${deviceId}/${currentMonth}`;  
+    apiUrl = `/rooms_1day/${deviceId}/${currentMonth}`;  
   }
 
   try {
@@ -197,7 +197,7 @@ useEffect(() => {
 
   const [energyUsed, setEnergyUsed] = useState(0);
   const getTotalEnergy = async (idRoom) => {
-    const apiUrl = `http://localhost:3000/rooms_mon_energy_used/${idRoom}`
+    const apiUrl = `/rooms_mon_energy_used/${idRoom}`
     try {
       const response = await axios.get(apiUrl);
       console.log(response.data);
@@ -284,7 +284,7 @@ useEffect(() => {
 
   // const fetchData = async () => {
   //   try {
-  //     const response = await axios.get('http://localhost:3000/rooms');
+  //     const response = await axios.get('/rooms');
   //     setData(response.data);
   //     console.log(response.data);
   //   } catch (error) {
@@ -311,7 +311,7 @@ useEffect(() => {
 
   // const fetchData = async (idRoom) => {
   //   try {
-  //     const url = `http://localhost:3000/rooms/${idRoom}`;
+  //     const url = `/rooms/${idRoom}`;
   //     const response = await axios.get(url);
   //     setData(response.data);
   //     console.log(response.data);
@@ -342,7 +342,7 @@ useEffect(() => {
 
   const fetchDataToPrice = async (idRoom) => {
     try {
-      const response = await axios.get(`http://localhost:3000/rooms_mon_price/${idRoom}`);
+      const response = await axios.get(`/rooms_mon_price/${idRoom}`);
       setDataLineChart(response.data);
   
       console.log(response.data);
