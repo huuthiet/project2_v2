@@ -36,12 +36,42 @@ const Home = () => {
     setActiveTab(newValue);
   };
   const tabs = [
-    { label: 'Chương 1', content: 'Nội dung Chương 1' },
-    { label: 'Chương 2', content: 'Nội dung Chương 2' },
-    { label: 'Chương 3', content: 'Nội dung Chương 3' },
-    { label: 'Chương 4', content: 'Nội dung Chương 4' },
-    { label: 'Chương 5', content: 'Nội dung Chương 5' },
+    { label: 'Chương 1', content: 'CHƯƠNG 1: TỔNG QUAN\n' +
+    '1.1	LÝ DO CHỌN ĐỀ TÀI\n' +
+    '1.2	MỤC TIÊU ĐỀ TÀI\n' +
+    '1.3	TÌNH HÌNH NGHIÊN CỨU\n' +
+    '1.4	PHƯƠNG PHÁP NGHIÊN CỨU\n'	+
+    '1.5	BỐ CỤC CỦA BÀI BÁO CÁO'},
+
+    { label: 'Chương 2', content: 'CHƯƠNG 2	CƠ SỞ LÝ THUYẾT\n' +
+    '2.1	HỆ THỐNG GIÁM SÁT ĐIỆN NĂNG TIÊU THỤ\n' +
+    '2.2	VI ĐIỀU KHIỂN CHÍNH – ESP32 NODE MCU\n' +
+    '2.3	NGÔN NGỮ THIẾT KẾ WEB\n' +
+    '2.4	CƠ SỞ DỮ LIỆU\n' +
+    '2.5	THƯ VIỆN VÀ FRAMEWORD PHÁT TRIỂN WEB\n' +
+    '2.6	CÁC CHUẨN TRUYỀN THÔNG\n' +
+    '2.7	HỆ ĐIỀU HÀNH THỜI GIAN THỰC\n' +
+    '2.8	CÁC LINH KIỆN HỆ THỐNG'},
+
+    { label: 'Chương 3', content: 'CHƯƠNG 3	THIẾT KẾ VÀ THI CÔNG HỆ THỐNG\n' + 
+    '3.1	PHÂN TÍCH YÊU CẦU HỆ THỐNG\n' +
+    '3.2	SƠ ĐỒ KHỐI CỦA HỆ THỐNG\n' +
+    '3.3	THIẾT KẾ PHẦN CỨNG HỆ THỐNG\n' +
+    '3.4	THIẾT KẾ PHẦN MỀM HỆ THỐNG' },
+
+    { label: 'Chương 4', content: 'CHƯƠNG 4	KẾT QUẢ THỰC HIỆN\n' +
+    '4.1	PHẦN CỨNG HỆ THỐNG\n' +
+    '4.2	GIAO DIỆN NGƯỜI DÙNG' },
+    { label: 'Chương 5', content: 'CHƯƠNG 5	KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN\n' +
+    '5.1	KẾT LUẬN\n' +
+    '5.2	HƯỚNG PHÁT TRIỂN' },
   ];
+
+  const defaultFontStyle = {
+    fontFamily: 'inherit', 
+    textAlign: 'left',
+    fontSize:'20px'
+  };
 
   return (
     <>
@@ -98,7 +128,7 @@ const Home = () => {
           <div key={index} role="tabpanel" hidden={activeTab !== index} className="tabpanel-container">
             {activeTab === index && (
               <div className="tabpanel-content">
-                <p>{tab.content}</p>
+                <pre style={defaultFontStyle}>{tab.content}</pre>
               </div>
             )}
           </div>
