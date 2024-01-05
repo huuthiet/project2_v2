@@ -5,6 +5,9 @@ import PaperWrapper from '../../components/PaperWrapper';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { auth, database } from  '../../firebase-config';
+import { getDatabase, ref, set, get } from "firebase/database";
+
 const ProfileCard = ({ fullName, phoneNumber }) => {
   console.log("fullName", fullName)
   console.log("phoneNumber", phoneNumber)
@@ -38,6 +41,9 @@ const ProfileCard = ({ fullName, phoneNumber }) => {
 };
 
 const EditProfile = ({ fullName, phoneNumber, email, idRoom }) => {
+  // const handleSaveChanges = () => {
+  //   onSaveChanges({ fullName, email, phoneNumber, idRoom });
+  // };
   return (
     <Col lg={8}>
       <Card>
@@ -47,7 +53,7 @@ const EditProfile = ({ fullName, phoneNumber, email, idRoom }) => {
               <Form.Label>Full Name</Form.Label>
             </Form.Group>
             <Form.Group as={Col} sm={9} className="text-secondary">
-              <Form.Control type="text" defaultValue={fullName} />
+              <Form.Control type="text" defaultValue={fullName} readOnly/>
             </Form.Group>
           </div>
           <div className="row mb-3">
@@ -55,7 +61,7 @@ const EditProfile = ({ fullName, phoneNumber, email, idRoom }) => {
               <Form.Label>Email</Form.Label>
             </Form.Group>
             <Form.Group as={Col} sm={9} className="text-secondary">
-              <Form.Control type="text" defaultValue={email} />
+              <Form.Control type="text" defaultValue={email} readOnly/>
             </Form.Group>
           </div>
           <div className="row mb-3">
@@ -63,7 +69,7 @@ const EditProfile = ({ fullName, phoneNumber, email, idRoom }) => {
               <Form.Label>Phone</Form.Label>
             </Form.Group>
             <Form.Group as={Col} sm={9} className="text-secondary">
-              <Form.Control type="text" defaultValue={phoneNumber} />
+              <Form.Control type="text" defaultValue={phoneNumber} readOnly/>
             </Form.Group>
           </div>
           <div className="row mb-3">
@@ -71,15 +77,15 @@ const EditProfile = ({ fullName, phoneNumber, email, idRoom }) => {
               <Form.Label>Id Room</Form.Label>
             </Form.Group>
             <Form.Group as={Col} sm={9} className="text-secondary">
-              <Form.Control type="text" defaultValue={idRoom} />
+              <Form.Control type="text" defaultValue={idRoom} readOnly/>
             </Form.Group>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <Col sm={3}></Col>
             <Col sm={9} className="text-secondary">
               <Button variant="primary" className="px-4">Save Changes</Button>
             </Col>
-          </div>
+          </div> */}
         </Card.Body>
       </Card>
     </Col>
@@ -103,6 +109,52 @@ const Profile = () => {
       setIdRoom(currentUser.idroom);
     }
   }, [currentUser]);
+
+  useEffect(() => {
+    if (currentUser) {
+      setFullName(currentUser.fullname);
+      setEmail(currentUser.email);
+      setPhoneNumber(currentUser.phonenumber);
+      setIdRoom(currentUser.idroom);
+    }
+  }, []);
+
+  const handleSaveChanges = () => {
+    const userId = currentUser.id; 
+
+    // const userRef = ref(database, `users/${userId}`);
+
+
+      const path = `users/${userId}`;
+      const updatedFields = {
+        'fullname': fullName,
+        'phonenumber': phoneNumber,
+        'idroom': idRoom,
+        'email': email,
+        'id': userId,
+        'role': currentUser.role
+      };
+      const dataRef = ref(database, path);
+
+      set(dataRef, updatedFields)
+      .then(() => {
+        console.log('Dữ liệu đã được cập nhật thành công.');
+      })
+      .catch((error) => {
+        console.error('Lỗi khi cập nhật dữ liệu:', error);
+      });
+      // await database().ref(`users/${userId}`).update({
+      //   "fullname": fullName,
+      //   "idroom" : idRoom,
+      //   "phonenumber": phoneNumber
+      // })
+      // await userRef.update({
+      //   fullname: fullName,
+      //   phonenumber: phoneNumber,
+      //   idroom: idRoom
+      // });
+  
+  };
 
   return (
     <>
